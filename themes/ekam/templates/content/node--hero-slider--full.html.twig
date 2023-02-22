@@ -1,0 +1,12 @@
+{% set active = index.loop == 0 ? 'active' %}
+
+<div class="carousel-item {{ active }}">
+	<img src="{{ content.field_image.0 }}" class="d-block w-100">
+	<div class="carousel-caption bg-dark">
+		<h3 class="hero-title">{{ label.0 }}</h3>
+		<div class="hero-content">
+        {{ content.body.0 }}
+        {{ content.field_link.0 }}
+        </div>
+	</div>
+</div>

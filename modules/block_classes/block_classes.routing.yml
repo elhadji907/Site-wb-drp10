@@ -1,0 +1,31 @@
+block_classes.settings:
+  path: '/admin/config/content/block-classes/settings'
+  defaults:
+    _title: 'Block Classes Settings'
+    _form: 'Drupal\block_classes\Form\BlockClassesSettingsForm'
+  requirements:
+    _permission: 'administer block css classes'
+
+block_classes.list:
+  path: '/admin/config/content/block-classes/list'
+  defaults:
+    _controller: '\Drupal\block_classes\Controller\BlockClassesController::blockList'
+    _title: 'Block List'
+  requirements:
+    _permission: 'administer block css classes'
+
+block_classes.class_list:
+  path: '/admin/config/content/block-classes/class-list'
+  defaults:
+    _controller: '\Drupal\block_classes\Controller\BlockClassesController::classList'
+    _title: 'Class List'
+  requirements:
+    _permission: 'administer block css classes'
+
+block_classes.attribute_list:
+  path: '/admin/config/content/block-classes/attribute-list'
+  defaults:
+    _controller: '\Drupal\block_classes\Controller\BlockClassesController::attributeList'
+    _title: 'Attribute List'
+  requirements:
+    _permission: 'administer block css classes'

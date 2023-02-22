@@ -1,0 +1,202 @@
+<?php
+
+/**
+ * Implements hook_preprocess_menu().
+ */
+function ekam_preprocess_menu(&$variables, $hook) {
+  if ($hook == 'menu__main') { // We're doing that for main menu.
+    // Get the current path.
+    $current_path = \Drupal::request()->getRequestUri();
+    $items = $variables['items'];
+    foreach ($items as $key => $item) {
+      // If path is current_path, set active to li.
+      if ($item['url']->toString() == $current_path) {
+        // Add active link.
+        $variables['items'][$key]['attributes']['class'] = 'active';
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function ekam_preprocess_page(&$variables) {
+
+  $variables['basepath'] = $GLOBALS['base_url'];
+  $variables['logopath'] = $GLOBALS['base_url'].'/' . drupal_get_path('theme','ekam') . '/logo.png';
+  $variables['drupal_developers'] = theme_get_setting('drupal_developers');
+  $variables['ptiwebtech'] = theme_get_setting('ptiwebtech');
+  $variables['twitter'] = theme_get_setting('twitter');
+  $variables['facebook'] = theme_get_setting('facebook');
+  $variables['instagram'] = theme_get_setting('instagram');
+  $variables['pintrest'] = theme_get_setting('pintrest');
+
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function ekam_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  // Get Request Object.
+  $request = \Drupal::request();
+
+  // If there is HTTP Exception..
+  if ($exception = $request->attributes->get('exception')) {
+    // Get the status code.
+    $status_code = $exception->getStatusCode();
+    if (in_array($status_code, array(401, 403, 404))) {
+      $suggestions[] = 'page__' . $status_code;
+    }
+  }
+
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $content_type = $node->bundle();
+    $suggestions[] = 'page__' . $content_type;
+  }
+
+}
+
+/**
+ * Preprocess variables for html templates.
+ *
+ * @param array $variables
+ *   HTML Variables needed.
+ */
+function ekam_preprocess_html(array &$variables) {
+
+  // https://www.drupal.org/node/2634364.
+  $variables['path_info']['args'] = FALSE;
+  $variables['path_info']['args'] = _ekam_theme_body_id();
+}
+
+/**
+ * Implements THEME_theme_suggestions_html_alter().
+ */
+function ekam_theme_suggestions_html_alter(array &$suggestions, array $variables) {
+
+  // Check to see if you are on a node.
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+
+    // Get the node type.
+    $type = $node->getType();
+
+    // Create the theme hook suggestions.
+    $suggestions[] = 'html__' . $type;
+    $suggestions[] = 'html__node_' . $type;
+  }
+}
+
+/**
+ * Implements hook_field_alter().
+ */
+function ekam_theme_suggestions_field_alter(&$suggestions, $variables) {
+  $suggestions[] = 'field__' . $variables['element']['#field_name'] . '__' . $variables['element']['#view_mode'];
+}
+
+/**
+ * @param $suggestions
+ * @param array $variables
+ */
+function ekam_theme_suggestions_form_element_alter(array &$suggestions, array $variables) {
+  if(isset($variables['element']['#id'])){
+  $suggestions[] = $variables['theme_hook_original'] . '__' . str_replace('-', '_', strtolower($variables['element']['#id']));
+  }
+}
+
+/**
+ * @param array $variables
+ */
+function ekam_preprocess_form_element(&$variables) {
+  if(isset($variables['element']['#id'])){
+    return $variables['id'] = "wrap-" . $variables['element']['#id'];
+  }
+}
+
+/**
+ * @param $suggestions
+ * @param array $variables
+ */
+function ekam_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
+  // If you want you can add a template suggestion for all views
+  // based on their ID:
+  $suggestions[] = sprintf('views_view__%s', $variables['view']->id());
+
+  // Or you can check the ID, add suggestions, do whatever you want
+  // ...
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * Add views unformatted template suggestions.
+ *
+ * @inheritdoc
+ */
+function ekam_theme_suggestions_views_view_unformatted_alter(array &$suggestions, array $variables) {
+  return [
+    'views_view_unformatted__' . $variables['view']->id()
+  ];
+}
+
+/**
+ * Implements hook_theme_suggestions_views_view_field().
+ *
+ * Add views field template suggestions.
+ *
+ * @inheritdoc
+ */
+function ekam_theme_suggestions_views_view_field(array $variables) {
+  return [
+    'views_view_field__' . $variables['field']->field
+  ];
+}
+
+/**
+ * This function generates the body id for the preprocess_html function
+ */
+function _ekam_theme_body_id(){
+  //need to clean this up a bit at some point..
+  //get the url because
+  //$url = \Drupal::service('path.current')->getPath();
+  $url = trim($_SERVER['REQUEST_URI']);
+  //clean whitespace
+  $url = str_replace(" ", "", $url);
+  //if there is a question mark
+  $url = str_replace("?", "/", $url);
+  //explode into an array
+  $url_array = explode('/', $url);
+  //adding the different paths to a long unique id
+  $body_id = $url_array[1];
+  if(isset($url_array[2])){
+      $body_id .= "-" . $url_array[2];
+  }elseif(isset($url_array[3])){
+      $body_id .= "-" . $url_array[3];
+  }
+  //if there is no index or url.
+  if(!$body_id){
+      $body_id = "index";
+  }
+  //this is here because the id search is used on the search page.
+  if($body_id == "search"){
+      $body_id = "search-page";
+  }
+  return $body_id;
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function ekam_preprocess_field(&$vars) {
+  if (
+    $vars['field_type'] == 'entity_reference_revisions'
+    &&
+    $vars['element']['#items']->getItemDefinition()->getSetting('target_type') == 'paragraph'
+  ) {
+    foreach ($vars['items'] as $idx => $item) {
+      $vars['items'][$idx]['content']['#paragraph']->index = $idx;
+    }
+  }
+}
+
+?>

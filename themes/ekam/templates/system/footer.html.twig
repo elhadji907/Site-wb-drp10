@@ -1,0 +1,39 @@
+<footer class="footer bg-dark">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-sm-12 footer-columns"> {{ page.footer_first }}	</div>
+			<div class="col-md-4 col-sm-12 footer-columns">	{{ page.footer_second }} </div>
+			<div class="col-md-4 col-sm-12 footer-columns">	{{ page.footer_third }}	</div>
+		</div>
+		<div class="row">
+			<div class="col-12"> {{ page.footer }} </div>
+		</div>
+	</div>
+
+	<div class="bottom-footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-6 col-sm-12 footer-bottom-columns">
+				<div class="copyright">
+					<p>&copy; <script>document.write(new Date().getFullYear())</script>	<a href="{{ptiwebtech}}"> Prerna Trimurty Infotech Pvt. Ltd. </a>
+						All Rights Reserved.</p>
+				</div>
+			</div>
+			<div class="col-md-6 col-6 col-sm-12 footer-bottom-columns">
+				<div class="social">
+				<h6>Stay Connected</h6>
+        {% if twitter %}
+					<a href="{{twitter}}" class="twitter"> <i class="fa fa-twitter"></i> </a>
+        {% endif %}
+        {% if facebook %}
+					<a href="{{facebook}}" class="facebook"> <i class="fa fa-facebook"></i>	</a>
+        {% endif %}
+        {% if instagram %}
+					<a href="{{instagram}}" class="instagram"> <i class="fa fa-instagram"></i> </a>
+        {% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</footer>

@@ -1,0 +1,14 @@
+name: 'Block Classes'
+type: module
+description: 'Allows assigning the classes to title, content of the Blocks.'
+package: Other
+configure: block_classes.settings
+core: 8.x
+core_version_requirement: ^8 || ^9 || ^10
+dependencies:
+  - drupal:block
+
+# Information added by Drupal.org packaging script on 2022-06-14
+version: '2.0.x-dev'
+project: 'block_classes'
+datestamp: 1655225118

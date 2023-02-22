@@ -1,0 +1,27 @@
+<!-- HEADER SECTION-->
+{% include "@bootstrap_seven/system/header.html.twig" %}
+<!-- END HEADER SECTION -->
+
+{{ page.highlighted }}
+
+<section id="not-found-section" class="text-center">
+	<div class="container">
+		<div class="row">
+			<div class="not-found-body">
+				<div class="not-title">
+					<h1>403</h1>
+					<h2>Access Denied</h2>
+				</div>
+				<h2>Access To The Webpage Was Denied.
+				</h2>
+				<p>You are not authorized to access this page. You must login to view this page.</p>
+				<a href="{{front_page}}" class="btn btn-custom"> Go Home </a>  
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+ 
+<!-- FOOTER SECTION-->
+{% include "@bootstrap_seven/system/footer.html.twig" %}
+<!-- END FOOTER SECTION -->

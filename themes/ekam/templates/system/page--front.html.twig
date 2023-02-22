@@ -1,0 +1,46 @@
+<!-- HEADER SECTION-->
+<header class="inner-page">
+	<nav class="navbar front navbar-expand-lg navbar-dark fixed-top " id="mainNav">
+		<div class="container">
+			<a class="navbar-brand" href="{{ path('<front>') }}"><img src="{{ logopath }}" alt="logo"></a>
+			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<i class="fa fa-bars"></i>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				{{ page.primary_menu }}
+			</div>
+		</div>
+	</nav>
+</header>
+<!-- END HEADER SECTION -->
+
+<div class="clearfix"></div>
+
+{{page.slider}}
+{{ page.highlighted }}
+
+<div class="clearfix"></div>
+<section id="main-wrapper-front" class="pt-3 pb-3 clearfix">
+	<div class="container">
+		{# {{ page.highlighted }} #}
+		<div id="main" class="row clearfix">
+			<div id="content" class="col-12 col-md-8 col-sm-12" role="main">
+				<a id="main-content" tabindex="-1"></a>
+				{{ page.content }}
+			</div>
+			<div class="clearfix"></div>
+			{% if page.sidebar %}
+				<section id="sidebar" class="col-12 col-md-4 col-sm-12 ">
+					<div class="sidebar">
+						{{ page.sidebar }}
+					</div>
+				</section>
+			{% endif %}
+		</div>
+	</div>
+</section>
+
+<div class="clearfix"></div>
+<!-- FOOTER SECTION-->
+{% include "@ekam/system/footer.html.twig" %}
+<!-- END FOOTER SECTION -->

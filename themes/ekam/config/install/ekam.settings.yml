@@ -1,0 +1,9 @@
+logo:
+  path: 'themes/ekam/logo.png'
+  use_default: false
+facebook: 'https://www.facebook.com'
+twitter: 'https://www.twitter.com'
+instagram: 'https://www.instagram.com'
+linkedin: 'https://www.linkedin.com'  
+drupal_developers: 'https://www.ptiwebtech.com/services/ecommerce/drupal-commerce/'
+ptiwebtech: 'https://www.ptiwebtech.com/'

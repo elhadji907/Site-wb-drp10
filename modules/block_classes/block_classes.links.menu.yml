@@ -1,0 +1,13 @@
+# Block Classes menu items definition
+block_classes.admin:
+  title: 'Block Classes'
+  route_name: block_classes.settings
+  description: 'Settings for Block Classes'
+  parent: system.admin_config_content
+
+block_classes.settings:
+  title: 'Settings'
+  route_name: block_classes.settings
+  description: 'Settings'
+  parent: block_classes.admin
+  weight: 1

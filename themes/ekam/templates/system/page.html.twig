@@ -1,0 +1,31 @@
+<!-- HEADER SECTION-->
+{% include "@ekam/system/header.html.twig" %}
+<!-- END HEADER SECTION -->
+
+<div class="clearfix"></div>
+<section id="main-wrapper" class="pt-3 pb-3 clearfix">
+	<div class="container">
+		{# {{ page.highlighted }} #}
+		<div id="main" class="row clearfix">
+			<div id="content" class="col-12 col-md-8 col-sm-12" role="main">
+				<a id="main-content" tabindex="-1"></a>
+				{{ page.bread_crumb }}
+				{{ page.highlighted }}
+				{{ page.content }}
+			</div>
+			<div class="clearfix"></div>
+			{% if page.sidebar %}
+				<section id="sidebar" class="col-12 col-md-4 col-sm-12 ">
+					<div class="sidebar">
+						{{ page.sidebar }}
+					</div>
+				</section>
+			{% endif %}
+		</div>
+	</div>
+</section>
+
+<div class="clearfix"></div>
+<!-- FOOTER SECTION-->
+{% include "@ekam/system/footer.html.twig" %}
+<!-- END FOOTER SECTION -->

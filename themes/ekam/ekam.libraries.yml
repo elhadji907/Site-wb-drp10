@@ -1,0 +1,18 @@
+global-styling:
+  css:
+    base:
+      'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css': { type: external, minified: true }
+      'https://fonts.googleapis.com/css?family=Roboto|Open+Sans': { type: external, minified: true }
+      'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css': { type: external, minified: true }
+      css/style.css: {}
+      
+  js:
+    'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js': { type: external, minified: true }
+    'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js': { type: external, minified: true }
+    js/main.js: {}
+
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - core/modernizr
+    - core/drupal 

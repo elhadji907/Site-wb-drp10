@@ -1,0 +1,12 @@
+# Define tab links
+block_classes.settings:
+  title: Settings
+  route_name: block_classes.settings
+  base_route: block_classes.settings
+  weight: 1
+
+block_classes.list:
+  title: Block List
+  route_name: block_classes.list
+  base_route: block_classes.settings
+  weight: 2

@@ -1,0 +1,24 @@
+<!-- HEADER SECTION-->
+{% include "@bootstrap_seven/system/header.html.twig" %}
+<!-- END HEADER SECTION -->
+{{ page.highlighted }}
+
+<section id="not-found-section" class="text-center">
+	<div class="container">
+		<div class="row">
+			<div class="not-found-body">
+				<div class="not-title">
+					<h1>404</h1>
+					<h2>Page Not Found</h2>
+				</div>
+				<h2>Sorry. We can't find a page.</h2>
+				<p>The Page you are looking for might have a removed, had its name changed, or its temporarily unavailable.</p>
+				<a href="{{front_page}}" class="btn btn-custom">Go Home</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- FOOTER SECTION-->
+{% include "@bootstrap_seven/system/footer.html.twig" %}
+<!-- END FOOTER SECTION -->

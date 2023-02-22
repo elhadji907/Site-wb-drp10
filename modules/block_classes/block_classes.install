@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for Block Classes.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function block_classes_install() {
+  \Drupal::messenger()->addStatus(t('Thanks for installing Block Classes. Now in the block configuration you will see a field to add your classes.'));
+}
+
+/**
+ * Update the maxlength field to use 255 by default.
+ */
+function block_classes_update_20001() {
+
+  // Get the config object.
+  $config = \Drupal::configFactory()->getEditable('block_classes.settings');
+
+  // Set the value of maxlength.
+  $config->set('maxlength_block_class_field', 255);
+
+  // Save that.
+  $config->save();
+
+}

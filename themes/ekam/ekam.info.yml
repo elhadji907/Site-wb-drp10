@@ -1,0 +1,28 @@
+name: Ekam - Bootstrap 4 bloging site
+type: theme
+description: 'Ekam - Bootstrap 4 bloging site.'
+package: theme
+core_version_requirement: ^8.8 || ^9 || ^10
+libraries:
+  - ekam/global-styling
+ 
+base theme: classy
+#Using Classy as a base theme https://www.drupal.org/theme-guide/8/classy
+
+regions:
+  primary_menu: Primary menu
+  slider: slider
+  bread_crumb: breadcrumb
+  highlighted: Highlighted
+  content: Content
+  sidebar: Sidebar
+  footer_first: footer first
+  footer_second: footer second
+  footer_third: footer third
+  footer: footer
+  hide: Hide
+
+# Information added by Drupal.org packaging script on 2023-02-02
+version: '8.0.1+0-dev'
+project: 'ekam'
+datestamp: 1675337218
