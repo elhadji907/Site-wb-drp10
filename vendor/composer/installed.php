@@ -316,6 +316,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'drupal/exclude_node_title' => array(
+            'pretty_version' => '1.4.0',
+            'version' => '1.4.0.0',
+            'reference' => '8.x-1.4',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../modules/contrib/exclude_node_title',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'drupal/jquery_ui' => array(
             'pretty_version' => '1.6.0',
             'version' => '1.6.0.0',

@@ -27,6 +27,7 @@
         "drupal/drush_language": "^1.0@RC",
         "drupal/editor_advanced_link": "^2.1",
         "drupal/edux": "10.1",
+        "drupal/exclude_node_title": "1.4",
         "drupal/modal_page": "^5.0",
         "drupal/module_filter": "^4.0",
         "drupal/pathauto": "1.11",
