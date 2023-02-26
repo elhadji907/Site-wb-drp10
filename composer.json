@@ -36,6 +36,7 @@
         "drupal/tara": "10.0",
         "drupal/thex": "^9.2",
         "drupal/vani": "10.0",
+        "drupal/views_slideshow": "^5.0",
         "drupal/webform": "^6.2@beta",
         "drupal/xara": "10.1"
     },
