@@ -1,9 +1,12 @@
 /* Variables
+
+  --bold-color: #222222;
 -------------------------------------------- */
 :root {
   --body-bg: #f4f4ef;
   --text-color: #595959;
   --bold-color: #222222;
+  --bold-colors: #e0841d;
   --header-top-bg: #e4e4dd;
   --primary: #e3831c;
   --light: #f7f7f2;
@@ -1087,7 +1090,7 @@ ul.main-menu > li > a,
 
 ul.main-menu > li > a:hover,
 .region-primary-menu .menu > li > a:hover {
-  background: var(--bold-color);
+  background: var(--bold-colors);
   color: #ffffff;
 }
 
@@ -1108,7 +1111,7 @@ ul.main-menu ul.submenu li,
   width: 160px;
   padding: 12px 10px;
   font-size: 0.9rem;
-  background: var(--bold-color);
+  background: var(--bold-colors);
   border-top: 1px solid #494949;
   text-align: left;
 }
