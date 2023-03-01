@@ -1898,7 +1898,7 @@ h3.single-comment-title {
   width: 100%;
   min-height: 100vh;
   margin: 0 auto;
-  background-color: var(--body-bg);
+  background-color: var(--bg-body);
   background-image: url(../images/slider.jpg);
   background-repeat: no-repeat;
   background-position: center top;
@@ -2360,7 +2360,7 @@ ol.search-results li {
       -ms-flex: 1 0 400px;
           flex: 1 0 400px;
   padding: 2rem;
-  background: #ffffff;
+  background: var(--light);
   text-align: center;
   -webkit-box-shadow: var(--shadow);
           box-shadow: var(--shadow);
