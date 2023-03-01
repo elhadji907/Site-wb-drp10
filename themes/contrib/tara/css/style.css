@@ -6,7 +6,7 @@
   --body-bg: #f4f4ef;
   --text-color: #595959;
   --bold-color: #222222;
-  --bold-colors: #e0841d;
+  --bold-colors: #e3831c;
   --header-top-bg: #e4e4dd;
   --primary: #e3831c;
   --light: #f7f7f2;
@@ -142,7 +142,7 @@ a:focus {
 }
 
 a:hover {
-  color: var(--bold-color);
+  color: var(--bold-colors);
 }
 
 a:active,
@@ -780,8 +780,8 @@ summary {
 }
 
 .sidebar-left .main-container {
-  -ms-grid-columns: 25% 75%;
-      grid-template-columns: 25% 75%;
+  -ms-grid-columns: 20% 80%;
+      grid-template-columns: 20% 80%;
 }
 
 .sidebar-right .main-container {
@@ -790,8 +790,8 @@ summary {
 }
 
 .two-sidebar .main-container {
-  -ms-grid-columns: 25% 50% 25%;
-      grid-template-columns: 25% 50% 25%;
+  -ms-grid-columns: 20% 60% 20%;
+      grid-template-columns: 20% 60% 20%;
 }
 
 #sidebar-left {
@@ -1064,7 +1064,7 @@ ul.main-menu,
 
 ul.main-menu > li a,
 .region-primary-menu .menu > li a {
-  color: var(--bold-color);
+  color: var(--bold-colors);
   text-decoration: none;
 }
 
@@ -1139,7 +1139,7 @@ li.collapsed:hover ul.submenu,
 
 ul.main-menu li:hover > a,
 .region-primary-menu .menu > li:hover a {
-  background: var(--bold-color);
+  background: var(--bold-colors);
   color: #ffffff;
 }
 
@@ -2357,8 +2357,8 @@ ol.search-results li {
 
 .service {
   -webkit-box-flex: 1;
-      -ms-flex: 1 0 300px;
-          flex: 1 0 300px;
+      -ms-flex: 1 0 400px;
+          flex: 1 0 400px;
   padding: 2rem;
   background: #ffffff;
   text-align: center;
@@ -3009,7 +3009,7 @@ nav.pager::after {
     padding: 10px 0 10px 10px;
   }
   .search-box-content {
-    width: 90%;
+    width: 50%;
   }
   .main-menu,
   .region-primary-menu .menu {
@@ -3254,10 +3254,10 @@ nav.pager::after {
 
 /* Medium Devices, Laptop, Desktop
 ------------------------------------------------- */
-@media only screen and (min-width: 992px) and (max-width: 1170px) {
+@media only screen and (min-width: 992px) and (max-width: 1270px) {
   .container {
     width: 100%;
-    max-width: 1170px;
+    max-width: 1270px;
   }
 }
 
@@ -3266,7 +3266,7 @@ nav.pager::after {
 @media screen and (min-width: 1170px) {
   .container {
     width: 100%;
-    max-width: 1170px;
+    max-width: 1270px;
   }
 }
 /*# sourceMappingURL=style.css.map */
